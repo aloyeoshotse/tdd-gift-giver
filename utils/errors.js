@@ -19,4 +19,4 @@ class NotFoundError extends ExpressError {
 }
 
 
-export default {ExpressError, BadRequestError, NotFoundError}
+module.exports =  {ExpressError, BadRequestError, NotFoundError}

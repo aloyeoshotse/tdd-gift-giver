@@ -10,7 +10,7 @@ router.get('/', async(req,res) => {
         res.status(200);
         // const body = req.params.body
         // console.log(body.names)
-        res.json('hi')
+        res.json('aloye')
     })
 
 router.post('/pairs', async(req,res) => {

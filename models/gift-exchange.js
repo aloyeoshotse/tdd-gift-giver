@@ -1,7 +1,9 @@
+const {BadRequestError} = require("../utils/errors")
+
 class GiftExchange {
 
     static pairs(names) {
-        if (names.length % 2 != 0) {throw new Error;}
+        if (names.length % 2 != 0) {throw new BadRequestError;} //check this
         var copyNames = names;
         var finalArr = []
         for (let idx=0; idx < (names.length)/2; idx++) {
@@ -17,10 +19,8 @@ class GiftExchange {
         return finalArr
     }
 
-    
+
     static traditional(names){
-        //["me", "you", "us", "her", "him", "y'all"]
-        //["they","them"]
         var copyNames = names;
         let randomArr = [];
         let finalArr = [];
@@ -42,4 +42,4 @@ class GiftExchange {
 
 }
 
-export default GiftExchange
+module.exports = GiftExchange
