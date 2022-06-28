@@ -23,7 +23,7 @@ app.use((err,req,res,next) => {
     let status = err.status || 500
     let message = err.message || 'Something went wrong in the application'
 
-    return res.status(errStatus).json({
+    return res.status(status).json({
         error : {message, status}
     })
 })

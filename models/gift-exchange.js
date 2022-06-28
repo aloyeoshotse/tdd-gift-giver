@@ -6,26 +6,27 @@ class GiftExchange {
         if (names.length % 2 != 0) {throw new BadRequestError;} //check this
         var copyNames = names;
         var finalArr = []
-        for (let idx=0; idx < (names.length)/2; idx++) {
+        while (copyNames.length > 0) {
             var tup = []
             for (let count=0; count < 2; count++){
-                let randomIdx = Math.random(copyNames.length)
+                // let len = copyNames.length
+                let randomIdx = Math.floor(Math.random() * copyNames.length)
                 let item = copyNames[randomIdx]
                 tup.splice(count,0,item)
                 copyNames.splice(randomIdx,1)
             }
-            finalArr.splice(idx,0,tup)
+            finalArr.push(tup)
         }
         return finalArr
     }
-
 
     static traditional(names){
         var copyNames = names;
         let randomArr = [];
         let finalArr = [];
-        for (let idx=0; idx < names.length; idx++) {
-            let randomIdx = Math.random(copyNames.length);
+        var len = names.length
+        while (copyNames.length > 0) {
+            let randomIdx = Math.floor(Math.random() * copyNames.length);
             randomArr.push(copyNames[randomIdx]);
             copyNames.splice(randomIdx,1);
         }
@@ -39,7 +40,7 @@ class GiftExchange {
         }
         return finalArr;
     }
-
+    
 }
 
 module.exports = GiftExchange
