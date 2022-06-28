@@ -4,14 +4,12 @@ const giftExchange = require("../models/gift-exchange");
 const { BadRequestError } = require('../utils/errors');
 
 const obj = {
-    namesG: ["me", "you", "them", "us", "her", "him", "they", "y'all"]
+    names: ["me", "you", "them", "us", "her", "him", "they", "y'all"]
 }
 
 
 router.get('/', async(req,res) => {
         res.status(200);
-        // const body = req.params.body
-        // console.log(body.names)
         res.json('aloye')
     })
 

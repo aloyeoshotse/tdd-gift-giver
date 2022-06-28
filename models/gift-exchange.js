@@ -17,7 +17,7 @@ class GiftExchange {
             }
             finalArr.push(tup)
         }
-        return finalArr
+        return finalArr;
     }
 
     static traditional(names){
